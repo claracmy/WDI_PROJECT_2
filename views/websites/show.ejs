@@ -3,10 +3,34 @@
 <h1><%= website.name %></h1>
 <h3><%= website.description %></h3>
 
-  <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
+<% if(locals.isAuthenticated && website.belongsTo(user)) { %>
   <a href="/websites/<%= website.id %>/edit">Edit</a>
   <form method="POST" action="/websites/<%= website.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button>Delete</button>
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
   </form>
   <% } %>
+<section>
+  <h4>Comment</h4>
+  <% website.comments.forEach((comment) => { %>
+    <p><%= comment.content %></p>
+    <small><%= comment.createdBy.username %></small>
+
+    <% if(locals.isAuthenticated && comment.belongsTo(user)) { %>
+    <form method="POST" action="/websites/<%= website.id %>/comments/<%= comment.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-secondary">Delete Comment</button>
+    </form>
+    <% } %>
+    <% }) %>
+  </section>
+
+  <% if(locals.isAuthenticated) { %>
+    <section>
+    <h4>Leave a comment</h4>
+    <form method="POST" action="/websites/<%= website.id %>/comments">
+    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <button class="btn btn-primary">Leave a comment</button>
+    </form>
+    </section>
+    <% } %>

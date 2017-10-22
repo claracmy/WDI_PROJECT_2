@@ -26,6 +26,7 @@ function websiteCreate(req, res, next) {
 function websiteShow(req, res) {
   Website
     .findById(req.params.id)
+    .populate('comments.createdBy')
     .exec()
     .then((website) => {
       if(!website) return res.status(404).end('Not found');
@@ -75,6 +76,40 @@ function websiteDelete(req, res, next) {
     .catch(next);
 }
 
+//comments
+
+function createCommentRoute(req, res, next) {
+  req.body.createdBy = req.user;
+
+  Website
+    .findById(req.params.id)
+    .exec()
+    .then((website) => {
+      if(!website) return res.notFound();
+
+      website.comments.push(req.body);
+      return website.save();
+    })
+    .then((website) => res.redirect(`/websites/${website.id}`))
+    .catch(next);
+}
+
+function deleteCommentRoute(req, res, next) {
+  Website
+    .findById(req.params.id)
+    .exec()
+    .then((website)=> {
+      if(!website) return res.notFound();
+      const comment = website.comments.id(req.params.commentId);
+      comment.remove();
+
+      return website.save();
+    })
+    .then((website) => res.redirect(`/websites/${website.id}`))
+    .catch(next);
+}
+
+
 module.exports = {
   index: websiteIndex,
   new: websiteNew,
@@ -82,5 +117,7 @@ module.exports = {
   show: websiteShow,
   edit: websiteEdit,
   update: websiteUpdate,
-  delete: websiteDelete
+  delete: websiteDelete,
+  createComment: createCommentRoute,
+  deleteComment: deleteCommentRoute
 };
