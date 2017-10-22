@@ -71,7 +71,7 @@ function websiteDelete(req, res, next) {
       if(!website.belongsTo(req.user)) return res.unauthroized('Permission denied');
       return website.remove();
     })
-    .then(() => res.redirect('homepage'))
+    .then(() => res.redirect('/'))
     .catch(next);
 }
 

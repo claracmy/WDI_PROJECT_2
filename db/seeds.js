@@ -32,17 +32,20 @@ User
         name: 'Frogcase',
         description: 'Anti-gravity phonecases',
         url: 'https://www.frogcase.com',
-        screenshotUrl: 'https://imgur.com/q8qT0eb.png'
+        screenshotUrl: 'https://imgur.com/q8qT0eb.png',
+        createdBy: users[0]
       }, {
         name: 'myAllergy',
         description: 'The world\'s largest free-from community',
         url: 'https://www.myallergy.com',
-        screenshotUrl: 'https://imgur.com/tGjrW9U.png'
+        screenshotUrl: 'https://imgur.com/tGjrW9U.png',
+        createdBy: users[0]
       }, {
         name: 'Entocube',
         description: 'Home grown crickets from Espoo, Finland',
         url: 'https://www.entocube.com',
-        screenshotUrl: 'https://imgur.com/m2F5hKz.png'
+        screenshotUrl: 'https://imgur.com/m2F5hKz.png',
+        createdBy: users[0]
       }]);
   })
   .then(websites => console.log(`${websites.length} websites created!`))
