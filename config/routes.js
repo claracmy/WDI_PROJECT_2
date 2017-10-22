@@ -22,4 +22,14 @@ router.route('/login')
 router.route('/logout')
   .get(sessionsController.delete);
 
+router.route('/profile')
+  .get(registrationsController.show)
+  .put(registrationsController.update);
+
+router.route('/profile/:id')
+  .delete(registrationsController.delete);
+
+router.route('/profile/edit')
+  .get(registrationsController.edit);
+
 module.exports = router;

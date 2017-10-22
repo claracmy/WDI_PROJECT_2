@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-faded navbar-inverse bg-primary">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -7,12 +7,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-    </ul>
+      <% if(!locals.isAuthenticated) { %>
+        <li><a class="nav-link" href="/register">Register</a></li>
+        <li><a class="nav-link" href="/login">Login</a></li>
+      <% } else { %>
+        <li><a class="nav-link" href="/profile"><%= user.username %></a></li>
+        <li><a class="nav-link" href="/logout">Logout</a></li>
+      <% } %>
   </div>
 </nav>

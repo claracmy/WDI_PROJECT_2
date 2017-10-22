@@ -1,0 +1,14 @@
+<h1><%= user.username %></h1>
+
+<h4><%= user.firstname %></h4>
+<h4><%= user.lastname %></h4>
+
+<p><%= user.email %></p>
+
+
+<a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
+
+<form method="POST" action="/profile/<%= user.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <button class="btn btn-secondary">Delete Profile</button>
+</form>

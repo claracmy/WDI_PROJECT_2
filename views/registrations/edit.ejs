@@ -1,0 +1,29 @@
+<form method="POST" action="/profile">
+  <input type="hidden" name="_method" value="PUT">
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" id="firstname" value="<%= user.firstname %>"class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" id="lastname" value="<%= user.lastname %>"class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required value="<%= user.username %>"class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required value="<%= user.email %>"class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="passwordConfirmation">Password Confirmation</label>
+    <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control" required>
+  </div>
+
+  <button class="btn btn-primary">Edit Profile</button>
+</form>
