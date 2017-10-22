@@ -3,7 +3,7 @@ const router  = express.Router();
 const registrationsController = require('../controllers/registrations');
 const sessionsController = require('../controllers/sessions');
 const websitesController = require('../controllers/websites');
-// const secureRoute = require('../lib/secureRoute');
+const secureRoute = require('../lib/secureRoute');
 
 
 // Website routes
@@ -12,16 +12,16 @@ router.route('/')
   .get(websitesController.index);
 
 router.route('/websites/new')
-  .get(websitesController.new)
-  .post(websitesController.create);
+  .get(secureRoute, websitesController.new)
+  .post(secureRoute, websitesController.create);
 
 router.route('/websites/:id')
   .get(websitesController.show)
-  .put(websitesController.update)
-  .delete(websitesController.delete);
+  .put(secureRoute, websitesController.update)
+  .delete(secureRoute, websitesController.delete);
 
 router.route('/websites/:id/edit')
-  .get(websitesController.edit);
+  .get(secureRoute, websitesController.edit);
 
 
 // User routes
@@ -37,13 +37,13 @@ router.route('/logout')
   .get(sessionsController.delete);
 
 router.route('/profile')
-  .get(registrationsController.show)
-  .put(registrationsController.update);
+  .get(secureRoute, registrationsController.show)
+  .put(secureRoute, registrationsController.update);
 
 router.route('/profile/:id')
-  .delete(registrationsController.delete);
+  .delete(secureRoute, registrationsController.delete);
 
 router.route('/profile/edit')
-  .get(registrationsController.edit);
+  .get(secureRoute, registrationsController.edit);
 
 module.exports = router;
