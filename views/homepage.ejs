@@ -1,5 +1,15 @@
 <% if (locals.message) { %>
   <p><%= message %></p>
-<% } %>
-
-<h1>Hello!</h1>
+  <% } %>
+  <main class="container">
+    <div class="row">
+    <% websites.forEach((website) => { %>
+      <div class="website col-lg-4 col-md-6">
+      <h1><a href="/websites/<%= website.id %>"><%= website.name %></a></h2>
+      <h2>Description <%= website.description %></h2>
+      <p>Link <%= website.url %></p>
+      <img class="img-fluid" src= <%= website.screenshotUrl %>>
+      </div>
+      <% }); %>
+    </div>
+  </main>

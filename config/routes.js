@@ -2,15 +2,27 @@ const express = require('express');
 const router  = express.Router();
 const registrationsController = require('../controllers/registrations');
 const sessionsController = require('../controllers/sessions');
+const websitesController = require('../controllers/websites');
 // const secureRoute = require('../lib/secureRoute');
 
 // A home route
-router.get('/', (req, res) => res.render('homepage'));
 
-// RESTful routes
+// Website routes
+
+router.route('/')
+  .get(websitesController.index);
+
+router.route('/websites/new')
+  .get(websitesController.new)
+  .post(websitesController.create);
+
+router.route('/websites/:id')
+  .get(websitesController.show);
 
 
 
+
+// User routes
 router.route('/register')
   .get(registrationsController.new)
   .post(registrationsController.create);
