@@ -5,7 +5,6 @@ const sessionsController = require('../controllers/sessions');
 const websitesController = require('../controllers/websites');
 // const secureRoute = require('../lib/secureRoute');
 
-// A home route
 
 // Website routes
 
@@ -17,9 +16,12 @@ router.route('/websites/new')
   .post(websitesController.create);
 
 router.route('/websites/:id')
-  .get(websitesController.show);
+  .get(websitesController.show)
+  .put(websitesController.update)
+  .delete(websitesController.delete);
 
-
+router.route('/websites/:id/edit')
+  .get(websitesController.edit);
 
 
 // User routes

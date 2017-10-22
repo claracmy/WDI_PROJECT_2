@@ -2,3 +2,11 @@
 <p><%= website.url %></p>
 <h1><%= website.name %></h1>
 <h3><%= website.description %></h3>
+
+  <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
+  <a href="/websites/<%= website.id %>/edit">Edit</a>
+  <form method="POST" action="/websites/<%= website.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button>Delete</button>
+  </form>
+  <% } %>
