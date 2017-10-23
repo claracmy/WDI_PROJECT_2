@@ -4,6 +4,16 @@ body {
   box-sizing: border-box;
 }
 
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  .col,[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 a {
   text-decoration: none;
   color: $a-color;
@@ -11,6 +21,10 @@ a {
     text-decoration: none;
     color: $secondary-color;
   }
+}
+
+p {
+  margin-top: 10px;
 }
 
 nav {
@@ -72,9 +86,9 @@ nav {
 .website-background {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  opacity: 0.8;
-  height: 350px;
+  background-size: cover;
+  opacity: 0.9;
+  height: 400px;
   &:hover {
     //darken and show link overlay
   }
@@ -92,14 +106,14 @@ nav {
 }
 
 input {
+  background: none;
+  border: none;
+  border-bottom: solid 3px #DDD;
   font-size: $paragraph;
   font-weight: 500;
-  border: none;
   padding: 10px 10px;
   margin: 0;
   width: 100%;
-  border-bottom: solid 3px #DDD;
-  background: none;
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
   }
@@ -110,20 +124,17 @@ input {
 }
 
 textarea {
-  outline: none;
   background: none;
-  padding: 10px;
   border: 1px solid #DDD;
   border-radius: 5px;
-  width: 100%;
   font-size: $paragraph;
   font-weight: 500;
+  height: 150px;
+  outline: none;
   resize: none;
+  padding: 10px;
+  width: 100%;
   &:focus {
     border: solid 3px $primary-color;
   }
-}
-
-#description {
-  height: 150px;
 }

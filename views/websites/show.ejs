@@ -28,9 +28,8 @@
 
   <% if(locals.isAuthenticated) { %>
     <section>
-    <p>Leave feedback</p>
     <form method="POST" action="/websites/<%= website.id %>/comments">
-    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <textarea name="content" id="content" placeholder="Leave your feedback"></textarea>
     <button class="btn btn-primary">Leave a comment</button>
     </form>
     </section>

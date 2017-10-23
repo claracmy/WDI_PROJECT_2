@@ -2,14 +2,12 @@
   <p><%= message %></p>
   <% } %>
 
-  <main class="container-fluid">
-    <div class="row">
+  <main class="container-fluid no-gutters">
+    <div class="row no-gutters">
       <% websites.forEach((website) => { %>
-        <div class="website col-lg-4 col-md-6">
+        <div class="website col-lg-4 col-md-6 no-gutters">
         <div class="website-background" style="background-image: url(<%= website.screenshotUrl %>)">
         </div>
-        <h1 class="website-name"><a href="/websites/<%= website.id %>"><%= website.name %></a></h1>
-        <p><%= website.description %></p>
         </div>
         <% }); %>
       </div>

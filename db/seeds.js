@@ -46,6 +46,42 @@ User
         url: 'https://www.entocube.com',
         screenshotUrl: 'https://imgur.com/m2F5hKz.png',
         createdBy: users[0]
+      }, {
+        name: 'PressPanda',
+        description: 'Find the right journalist',
+        url: 'https://www.presspanda.com',
+        screenshotUrl: 'https://imgur.com/gtSHAz6.png',
+        createdBy: users[0]
+      }, {
+        name: 'SkateDecor',
+        description: 'Bespoke skateboard furniture',
+        url: 'https://www.skatedecor.com',
+        screenshotUrl: 'https://imgur.com/Li7JpfL.png',
+        createdBy: users[0]
+      }, {
+        name: 'Dalou',
+        description: 'Frische zmorge is buro',
+        url: 'https://www.dalou.ch',
+        screenshotUrl: 'https://imgur.com/gMAX8KI.png',
+        createdBy: users[0]
+      }, {
+        name: 'Project Aqua',
+        description: 'Micro-sharing for the future',
+        url: 'https://www.project-aqua.ch',
+        screenshotUrl: 'https://imgur.com/D1YzmEy.png',
+        createdBy: users[0]
+      }, {
+        name: 'Faitron',
+        description: 'The home appliance accelerator, building the world\'s fastest heating lunchbox',
+        url: 'https://www.faitron.com',
+        screenshotUrl: 'https://imgur.com/mpORRfn.png',
+        createdBy: users[0]
+      },{
+        name: 'Modum',
+        description: 'Data integrity for supply chain operations powered by blockchain',
+        url: 'https://modum.io/',
+        screenshotUrl: 'https://imgur.com/8nOGr0t.png',
+        createdBy: users[0]
       }]);
   })
   .then(websites => console.log(`${websites.length} websites created!`))
