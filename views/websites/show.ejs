@@ -1,17 +1,18 @@
+<div class="container">
 <img src="<%= website.screenshotUrl %>">
-<p><%= website.url %></p>
 <h1><%= website.name %></h1>
+<a href="<%= website.url %>"><p><%= website.url %></p></a>
 <h3><%= website.description %></h3>
 
 <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
-  <a href="/websites/<%= website.id %>/edit">Edit</a>
+  <button class="btn btn-primary"><a href="/websites/<%= website.id %>/edit">Edit Website</a></button>
   <form method="POST" action="/websites/<%= website.id %>">
   <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
+  <button class="btn btn-sm btn-danger">Delete Website</button>
   </form>
   <% } %>
 <section>
-  <h4>Comment</h4>
+  <h4>Feedback</h4>
   <% website.comments.forEach((comment) => { %>
     <p><%= comment.content %></p>
     <small><%= comment.createdBy.username %></small>
@@ -19,7 +20,7 @@
     <% if(locals.isAuthenticated && comment.belongsTo(user)) { %>
     <form method="POST" action="/websites/<%= website.id %>/comments/<%= comment.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <button class="btn btn-secondary">Delete Comment</button>
+    <button class="btn btn-sm btn-danger">Delete Comment</button>
     </form>
     <% } %>
     <% }) %>
@@ -27,10 +28,11 @@
 
   <% if(locals.isAuthenticated) { %>
     <section>
-    <h4>Leave a comment</h4>
+    <p>Leave feedback</p>
     <form method="POST" action="/websites/<%= website.id %>/comments">
     <textarea name="content" id="content" placeholder="Comment"></textarea>
     <button class="btn btn-primary">Leave a comment</button>
     </form>
     </section>
     <% } %>
+</div>

@@ -1,24 +1,27 @@
 <% if (locals.message) { %>
   <p><%= message %></p>
-<% } %>
+  <% } %>
+  <div class="container">
+    <div class="row">
+      <form method="POST" action="/websites/new" class="col-lg-9 col-sm-12 mx-auto">
+        <div class="form-field">
+          <label for="name">Name Of Website</label>
+          <input type="text" name="name" id="name" class="input-field">
+        </div>
+        <div class="form-field">
+          <label for="description">Brief Description (Max. 140 words)</label>
+          <textarea name="description" id="description" maxlength="140" class="input-field"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="url">Link to Website</label>
+          <input type="text" name="url" id="url" class="input-field">
+        </div>
+        <div class="form-field">
+          <label for="screenshotUrl">Link to Screenshot</label>
+          <input type="text" name="screenshotUrl" id="screenshotUrl" class="input-field">
+        </div>
 
-<form method="POST" action="/websites/new">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="form-control">
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="description">Brief description</label>
-    <input type="text" name="description" id="description" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="url">Link to website</label>
-    <input type="text" name="url" id="url" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="screenshotUrl">Link to screenshot</label>
-    <input type="text" name="screenshotUrl" id="screenshotUrl" class="form-control">
-  </div>
-
-  <button class="btn btn-primary">Submit</button>
-</form>

@@ -4,14 +4,23 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: $a-color;
+  &:hover {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+}
+
 nav {
-  margin: 20px 0;
+  margin: 60px 0;
   ul {
     a {
       margin: 0 20px;
       font-size: $paragraph;
       font-weight: bold;
-      color: $color-link;
+      color: $a-color;
       &:hover {
         color: $primary-color;
         border-bottom: solid 3px $primary-color;
@@ -21,8 +30,20 @@ nav {
   }
 }
 
+@media (min-width: 768px) {
+.navbar-brand.abs
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin:0 auto;
+        z-index: -1;
+    }
+}
+
+
 .btn {
-  width: 100%;
   padding: 20px;
   margin-top: 15px;
   font-size: 20px;
@@ -46,13 +67,6 @@ nav {
 
 .website-name {
   text-align: center;
-  a {
-    text-decoration: none;
-    color: black;
-    &:hover {
-      text-decoration:none;
-    }
-  }
 }
 
 .website-background {
@@ -89,9 +103,27 @@ input {
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
   }
+  &:focus {
+    outline: none;
+    border-bottom: solid 3px $primary-color;
+  }
 }
 
-input:focus, textarea:focus {
+textarea {
   outline: none;
-  border-bottom: solid 3px $primary-color;
+  background: none;
+  padding: 10px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  width: 100%;
+  font-size: $paragraph;
+  font-weight: 500;
+  resize: none;
+  &:focus {
+    border: solid 3px $primary-color;
+  }
+}
+
+#description {
+  height: 150px;
 }
