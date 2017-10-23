@@ -1,34 +1,32 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse dual-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">About</a>
-        </li>
-        <% if(locals.isAuthenticated) { %>
-          <li class="nav-item"><a class="nav-link" href="/websites/new">Add your site</a></li>
-          <% } %>
-        </ul>
-      </div>
-      <ul class="navbar-nav mx-auto">
-        <li><img class="img-fluid logo" src="/images/logo.png"></li>
+<nav class="navbar navbar-expand-lg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse dual-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">About</a>
+      </li>
+      <% if(locals.isAuthenticated) { %>
+        <li class="nav-item"><a class="nav-link" href="/websites/new">Submit your site</a></li>
+        <% } %>
       </ul>
-      <div class="collapse navbar-collapse dual-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <% if(!locals.isAuthenticated) { %>
-            <li class="nav-item"><a class="nav-link " href="/register">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-            <% } else { %>
-              <li class="nav-item"><a class="nav-link" href="/profile"><%= user.username %></a></li>
-              <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-              <% } %>
-            </ul>
-          </div>
-        </nav>
-      </div>
+    </div>
+    <div>
+      <a class= "d-flex mx-auto" href="/"><img class="logo" src="/images/logo.png"></a>
+    </div>
+    <div class="navbar-collapse collapse dual-collapse">
+      <ul class="navbar-nav ml-auto">
+        <% if(!locals.isAuthenticated) { %>
+          <li class="nav-item"><a class="nav-link " href="/register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          <% } else { %>
+            <li class="nav-item"><a class="nav-link" href="/profile"><%= user.username %></a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>

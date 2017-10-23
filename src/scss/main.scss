@@ -5,9 +5,11 @@ body {
 }
 
 nav {
-  ul{
+  margin: 20px 0;
+  ul {
     a {
-      margin: 20px;
+      margin: 0 20px;
+      font-size: $paragraph;
       font-weight: bold;
       color: $color-link;
       &:hover {
@@ -20,17 +22,20 @@ nav {
 }
 
 .btn {
-    margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  margin-top: 15px;
+  font-size: 20px;
 }
 
 .btn-primary {
   background-color: $primary-color;
-  text-align: center;
   border-color: $primary-color;
-}
-
-.logo {
-  width: 300 px;
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+    border-color: lighten($primary-color, 10%);
+    cursor: pointer;
+  }
 }
 
 .website {
@@ -57,7 +62,7 @@ nav {
   opacity: 0.8;
   height: 350px;
   &:hover {
-
+    //darken and show link overlay
   }
 }
 
@@ -69,16 +74,17 @@ nav {
 
 
 .form-field {
-    border-bottom: solid 3px $primary-color;
-    margin: 30px 0;
-    padding: 10px 0;
+  margin: 30px 0;
 }
 
 input {
-  border  : none;
-  padding : 0 10px;
-  margin  : 0;
+  font-size: $paragraph;
+  font-weight: 500;
+  border: none;
+  padding: 10px 10px;
+  margin: 0;
   width: 100%;
+  border-bottom: solid 3px #DDD;
   background: none;
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
@@ -86,5 +92,6 @@ input {
 }
 
 input:focus, textarea:focus {
-  outline      : none;
+  outline: none;
+  border-bottom: solid 3px $primary-color;
 }
