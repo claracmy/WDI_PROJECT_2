@@ -20,8 +20,19 @@ function registrationCreate(req, res) {
     });
 }
 
-function registrationShow(req, res) {
-  res.render('registrations/show');
+function registrationShow(req, res, next) {
+  User
+    .findById(req.params.id)
+    .exec()
+    .then((user) => {
+      Website
+        .find()
+        .exec()
+        .then((websites) => {
+          res.render('registrations/show', { user, websites });
+        });
+    })
+    .catch(next);
 }
 
 function registrationEdit(req, res) {

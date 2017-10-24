@@ -1,4 +1,5 @@
 @import "variables";
+// layouts
 
 html, body {
   height: 100%;
@@ -15,10 +16,14 @@ html, body {
 
  footer {
     bottom: 0;
+    font-family: $header-font;
+    color: #999;
     height: 20px;
     left: 0;
     position: absolute;
     width: 100%;
+    text-align: center;
+    font-weight: bold;
 }
 
 .no-gutters {
@@ -29,6 +34,12 @@ html, body {
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+//typography
+
+h1 {
+  font-family: $header-font;
 }
 
 a {
@@ -42,7 +53,10 @@ a {
 p {
   margin-top: 10px;
   font-size: $paragraph;
+  font-family: $standard-font;
 }
+
+// navbar
 
 nav {
   margin: 80px 0;
@@ -73,13 +87,14 @@ nav {
     }
 }
 
-footer {
-  text-align: center;
-  font-weight: bold;
-}
+//buttons
 
 .btn {
   cursor: pointer;
+}
+
+.btn-group {
+  float: right;
 }
 
 .btn-primary {
@@ -102,6 +117,17 @@ footer {
     border-color: darken($primary-color, 10%);
   }
 }
+
+.btn-danger {
+  background-color: $accent-color;
+  border-color: $accent-color;
+  &:hover {
+    background-color: darken($accent-color, 10%);
+    border-color: darken($accent-color, 10%);
+  }
+}
+
+//frontpage
 
 .website {
   p {
@@ -141,7 +167,6 @@ footer {
 .website-hover-content {
   z-index: 2;
   position: relative;
-  font-family: $accent-font;
   color: white;
   height: 100%;
   display: flex;
@@ -165,10 +190,11 @@ footer {
 }
 
 // Show page
+
 .showpage {
   h1, h2 {
     text-align: center;
-    color: $accent-color;
+    color: $primary-color;
     margin-bottom: 25px;
   }
   a:hover {
@@ -188,15 +214,10 @@ footer {
   margin: 10px 0;
 }
 
-.btn-group {
-  float: right;
-}
-
 .quotation-marks {
   font-size: 40px;
   font-family: 'Old Standard TT', serif;
 }
-
 
 //Forms
 
@@ -250,5 +271,5 @@ textarea {
 }
 
 .profile-text {
-  color: $accent-color;
+  color: $primary-color;
 }

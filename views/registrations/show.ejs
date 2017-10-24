@@ -4,13 +4,7 @@
     <h4>First Name: <span class="profile-text"><%= user.firstname %></span></h4>
     <h4>Last Name: <span class="profile-text"><%= user.lastname %></span></h4>
     <h4>Email Address: <span class="profile-text"><%= user.email %></span></h4>
-
-    <% websites.forEach((website) => { %>
-      <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
-        <h1><%= website.name %></h1>
-      <% } %>
-    <% }); %>
-
+    <h1><%= user.hasProject %></h1>
 
 
     <div class="btn-group">
