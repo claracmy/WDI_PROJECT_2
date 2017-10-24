@@ -6,19 +6,19 @@
       <form method="POST" action="/websites/new" class="col-lg-9 col-sm-12 mx-auto">
         <div class="form-field">
           <label for="name">Name Of Website</label>
-          <input type="text" name="name" id="name" class="input-field">
+          <input type="text" name="name" id="name" class="input-field" required>
         </div>
         <div class="form-field">
           <label for="description">Brief Description (Max. 140 words)</label>
-          <textarea name="description" id="description" maxlength="140" class="input-field"></textarea>
+          <textarea name="description" id="description" maxlength="140" class="input-field" required></textarea>
         </div>
         <div class="form-field">
           <label for="url">Link to Website</label>
-          <input type="text" name="url" id="url" class="input-field">
+          <input type="text" name="url" id="url" class="input-field" required>
         </div>
         <div class="form-field">
           <label for="screenshotUrl">Link to Screenshot</label>
-          <input type="text" name="screenshotUrl" id="screenshotUrl" class="input-field">
+          <input type="text" name="screenshotUrl" id="screenshotUrl" class="input-field" required>
         </div>
 
         <button class="btn btn-primary">Submit</button>

@@ -1,14 +1,18 @@
-<h1><%= user.username %></h1>
+<div class="row">
+<div class="col-lg-6 col-sm-12 mx-auto">
+<h1>Username:<%= user.username %></h1>
 
-<h4><%= user.firstname %></h4>
-<h4><%= user.lastname %></h4>
+<h1>First Name: <%= user.firstname %></h4>
+<h1>Last Name: <%= user.lastname %></h4>
 
-<p><%= user.email %></p>
+<h1>Email Address: <%= user.email %></p>
 
-
-<a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
-
+<div class="btn-group">
+<a href="/profile/edit"><button class="btn btn-secondary">Edit Profile</button></a>
 <form method="POST" action="/profile/<%= user.id %>">
   <input type="hidden" name="_method" value="DELETE">
-  <button class="btn btn-secondary">Delete Profile</button>
+  <button class="btn btn-danger">Delete Profile</button>
 </form>
+</div>
+</div>
+</div>

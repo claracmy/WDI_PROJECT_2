@@ -1,21 +1,21 @@
-<form method="POST" action="/websites/<%= website.id %>">
+<form method="POST" action="/websites/<%= website.id %>" class="col-lg-6 col-sm-12 mx-auto">
   <input type="hidden" name="_method" value="PUT">
-  <div class="form-group">
+  <div class="form-field">
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="form-control">
+    <input type="text" name="name" id="name" class="input-field" value="<%= website.name %>" autofocus required>
   </div>
-  <div class="form-group">
+  <div class="form-field">
     <label for="description">Brief description</label>
-    <input type="text" name="description" id="description" class="form-control">
+    <textarea type="text" name="description" id="description" maxlength="140" class="input-field" required><%= website.description %></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-field">
     <label for="url">Link to website</label>
-    <input type="text" name="url" id="url" class="form-control">
+    <input type="text" name="url" id="url" class="input-field" value="<%= website.url %>" required>
   </div>
-  <div class="form-group">
+  <div class="form-field">
     <label for="screenshotUrl">Link to screenshot</label>
-    <input type="text" name="screenshotUrl" id="screenshotUrl" class="form-control">
+    <input type="text" name="screenshotUrl" id="screenshotUrl" class="input-field" value="<%= website.screenshotUrl %>" required>
   </div>
 
-  <button class="btn btn-primary">Edit</button>
+  <button class="btn btn-primary" id="edit-button">Edit</button>
 </form>

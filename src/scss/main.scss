@@ -24,6 +24,7 @@ a {
 
 p {
   margin-top: 10px;
+  font-size: $paragraph;
 }
 
 nav {
@@ -57,18 +58,27 @@ nav {
 
 
 .btn {
-  padding: 20px;
-  margin-top: 15px;
-  font-size: 20px;
+  cursor: pointer;
 }
 
 .btn-primary {
   background-color: $primary-color;
   border-color: $primary-color;
+  padding: 20px;
+  margin-top: 15px;
+  font-size: 20px;
   &:hover {
     background-color: lighten($primary-color, 10%);
     border-color: lighten($primary-color, 10%);
-    cursor: pointer;
+  }
+}
+
+.btn-secondary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
   }
 }
 
@@ -117,21 +127,43 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  p {
-    font-size: 20px;
-    }
-  a {
-    color: white;
-    font-size: 20px;
-  }
-  a:hover {
+  h1 {
     color: $secondary-color;
   }
+  a {
+    color: white;
+    font-size: $paragraph;
+    &:hover {
+      color: $secondary-color;
+      }
+    }
 }
 
 .align {
   max-width: 50%;
 }
+
+// Show page
+.showpage {
+  h1, h2 {
+    text-align: center;
+    color: $accent-color;
+    margin-bottom: 25px;
+  }
+  a:hover {
+    opacity: 0.9;
+  }
+}
+
+.show-website {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.comments {
+  margin: 10px 0;
+}
+
 
 //Forms
 
@@ -176,4 +208,10 @@ textarea {
   &:focus {
     border: solid 3px $primary-color;
   }
+}
+
+//Edit page
+
+#edit-button {
+  padding: 20px 40px;
 }
