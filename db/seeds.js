@@ -41,16 +41,16 @@ User
         screenshotUrl: 'https://imgur.com/tGjrW9U.png',
         createdBy: users[0]
       }, {
-        name: 'Entocube',
-        description: 'Home grown crickets from Espoo, Finland',
-        url: 'https://www.entocube.com',
-        screenshotUrl: 'https://imgur.com/m2F5hKz.png',
-        createdBy: users[0]
-      }, {
         name: 'PressPanda',
         description: 'Find the right journalist',
         url: 'https://www.presspanda.com',
         screenshotUrl: 'https://imgur.com/gtSHAz6.png',
+        createdBy: users[0]
+      }, {
+        name: 'Entocube',
+        description: 'Home grown crickets from Espoo, Finland',
+        url: 'https://www.entocube.com',
+        screenshotUrl: 'https://imgur.com/m2F5hKz.png',
         createdBy: users[0]
       }, {
         name: 'SkateDecor',

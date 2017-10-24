@@ -5,8 +5,15 @@
   <main class="container-fluid no-gutters">
     <div class="row no-gutters">
       <% websites.forEach((website) => { %>
-        <div class="website col-lg-4 col-md-6 no-gutters">
+        <div class="website col-lg-4 col-md-12 no-gutters">
         <div class="website-background" style="background-image: url(<%= website.screenshotUrl %>)">
+        <div class="website-hover-content">
+        <div class="align">
+          <div class="website-name"><h1><%= website.name %></h1></div>
+          <div class="website-description"><p><%= website.description %></p></div>
+          <a href="/websites/<%= website.id %>">V I E W &rarr;</a>
+        </div>
+        </div>
         </div>
         </div>
         <% }); %>

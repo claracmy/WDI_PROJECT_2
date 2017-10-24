@@ -1,37 +1,38 @@
 <div class="container">
-<img src="<%= website.screenshotUrl %>">
-<h1><%= website.name %></h1>
-<a href="<%= website.url %>"><p><%= website.url %></p></a>
-<h3><%= website.description %></h3>
+  <img src="<%= website.screenshotUrl %>">
+  <h1><%= website.name %></h1>
+  <a href="<%= website.url %>"><p><%= website.url %></p></a>
+  <h3><%= website.description %></h3>
 
-<% if(locals.isAuthenticated && website.belongsTo(user)) { %>
-  <button class="btn btn-primary"><a href="/websites/<%= website.id %>/edit">Edit Website</a></button>
-  <form method="POST" action="/websites/<%= website.id %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <button class="btn btn-sm btn-danger">Delete Website</button>
-  </form>
-  <% } %>
-<section>
-  <h4>Feedback</h4>
-  <% website.comments.forEach((comment) => { %>
-    <p><%= comment.content %></p>
-    <small><%= comment.createdBy.username %></small>
-
-    <% if(locals.isAuthenticated && comment.belongsTo(user)) { %>
-    <form method="POST" action="/websites/<%= website.id %>/comments/<%= comment.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button class="btn btn-sm btn-danger">Delete Comment</button>
+  <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
+    <button class="btn btn-primary"><a href="/websites/<%= website.id %>/edit">Edit Website</a></button>
+    <form method="POST" action="/websites/<%= website.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="btn btn-sm btn-danger">Delete Website</button>
     </form>
     <% } %>
-    <% }) %>
-  </section>
 
-  <% if(locals.isAuthenticated) { %>
     <section>
-    <form method="POST" action="/websites/<%= website.id %>/comments">
-    <textarea name="content" id="content" placeholder="Leave your feedback"></textarea>
-    <button class="btn btn-primary">Leave a comment</button>
-    </form>
+      <h4>Feedback</h4>
+      <% website.comments.forEach((comment) => { %>
+        <p><%= comment.content %></p>
+        <small><%= comment.createdBy.username %></small>
+
+        <% if(locals.isAuthenticated && comment.belongsTo(user)) { %>
+          <form method="POST" action="/websites/<%= website.id %>/comments/<%= comment.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-sm btn-danger">Delete Comment</button>
+          </form>
+          <% } %>
+      <% }) %>
     </section>
-    <% } %>
+
+        <% if(locals.isAuthenticated) { %>
+          <section>
+            <form method="POST" action="/websites/<%= website.id %>/comments">
+              <textarea name="content" id="content" placeholder="Leave your feedback"></textarea>
+              <button class="btn btn-primary">Leave a comment</button>
+            </form>
+          </section>
+          <% } %>
 </div>

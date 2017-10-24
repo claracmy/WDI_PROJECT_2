@@ -16,10 +16,9 @@ body {
 
 a {
   text-decoration: none;
-  color: $a-color;
   &:hover {
     text-decoration: none;
-    color: $secondary-color;
+    cursor: pointer;
   }
 }
 
@@ -28,7 +27,7 @@ p {
 }
 
 nav {
-  margin: 60px 0;
+  margin: 80px 0;
   ul {
     a {
       margin: 0 20px;
@@ -89,9 +88,49 @@ nav {
   background-size: cover;
   opacity: 0.9;
   height: 400px;
-  &:hover {
-    //darken and show link overlay
+  @media (min-width: 768px) {
+    height: 460px;
   }
+  &:after {
+    content: '\A';
+    position: absolute;
+    width: 100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.95);
+    opacity: 0;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+  }
+  &:hover:after {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.website-hover-content {
+  z-index: 2;
+  position: relative;
+  font-family: $AccentFont;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  p {
+    font-size: 20px;
+    }
+  a {
+    color: white;
+    font-size: 20px;
+  }
+  a:hover {
+    color: $secondary-color;
+  }
+}
+
+.align {
+  max-width: 50%;
 }
 
 //Forms
