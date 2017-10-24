@@ -35,13 +35,19 @@ function registrationShow(req, res, next) {
     .catch(next);
 }
 
-function registrationEdit(req, res) {
-  res.render('registrations/edit');
+function registrationEdit(req, res, next) {
+  User
+    .findById(req.params.id)
+    .exec()
+    .then((user) => {
+      res.render('registrations/edit', { user });
+    })
+    .catch(next);
 }
 
 function registrationUpdate(req, res) {
   User
-    .findOne({ username: req.body.username })
+    .findById(req.params.id)
     .exec()
     .then(user => {
       for(const field in req.body) {
@@ -49,9 +55,9 @@ function registrationUpdate(req, res) {
       }
       return user.save();
     })
-    .then(() => {
+    .then((user) => {
       req.flash('success', 'Information updated!');
-      res.redirect('/profile');
+      res.redirect(`/profile/${user.id}`);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

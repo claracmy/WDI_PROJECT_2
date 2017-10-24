@@ -40,6 +40,16 @@ html, body {
 
 h1 {
   font-family: $header-font;
+  @media (max-width: 540px){
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-family: $standard-font;
+  @media (max-width: 540px){
+    font-size: 18px;
+  }
 }
 
 a {
@@ -54,6 +64,10 @@ p {
   margin-top: 10px;
   font-size: $paragraph;
   font-family: $standard-font;
+
+  @media (max-width: 540px){
+    font-size: 14px;
+  }
 }
 
 // navbar
@@ -91,6 +105,14 @@ nav {
 
 .btn {
   cursor: pointer;
+  min-width: 150px;
+  margin-top: 15px;
+
+  @media (max-width: 768px) {
+  min-width: 100px;
+  margin: 0;
+  font-size: 12px;
+  }
 }
 
 .btn-group {
@@ -101,7 +123,6 @@ nav {
   background-color: $primary-color;
   border-color: $primary-color;
   padding: 20px;
-  margin-top: 15px;
   font-size: 20px;
   &:hover {
     background-color: lighten($primary-color, 10%);
@@ -127,6 +148,10 @@ nav {
   }
 }
 
+#login-button {
+  margin-top: 40px;
+}
+
 //frontpage
 
 .website {
@@ -145,8 +170,11 @@ nav {
   background-size: cover;
   opacity: 0.9;
   height: 400px;
-  @media (min-width: 768px) {
+  @media (min-width: 760px) {
     height: 460px;
+  }
+  @media (max-width: 1900px) {
+    height: 400px;
   }
   &:after {
     content: '\A';
@@ -182,6 +210,9 @@ nav {
     &:hover {
       color: $secondary-color;
       }
+      @media (max-width: 540px){
+        font-size: 18px;
+      }
     }
 }
 
@@ -202,6 +233,9 @@ nav {
   }
   p {
     font-size: 24px;
+    @media (max-width: 540px){
+      font-size: 14px;
+    }
     }
 }
 
@@ -217,6 +251,16 @@ nav {
 .quotation-marks {
   font-size: 40px;
   font-family: 'Old Standard TT', serif;
+  @media (max-width: 540px){
+    font-size: 18px;
+  }
+}
+
+.btn-link {
+  color: $accent-color;
+  &:hover {
+    color: darken($accent-color, 10%);
+  }
 }
 
 //Forms
@@ -230,15 +274,21 @@ nav {
   margin: 30px 0;
 }
 
-input {
+input, textarea {
   background: none;
-  border: none;
-  border-bottom: solid 3px #DDD;
   font-size: $paragraph;
   font-weight: 500;
+    width: 100%;
+  @media (max-width: 540px) {
+    font-size: 14px;
+  }
+}
+
+input {
+  border: none;
+  border-bottom: solid 3px #DDD;
   padding: 10px 10px;
   margin: 0;
-  width: 100%;
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
   }
@@ -249,26 +299,18 @@ input {
 }
 
 textarea {
-  background: none;
   border: 1px solid #DDD;
   border-radius: 5px;
-  font-size: $paragraph;
-  font-weight: 500;
   height: 150px;
   outline: none;
   resize: none;
   padding: 10px;
-  width: 100%;
   &:focus {
     border: solid 3px $primary-color;
   }
 }
 
 //Edit page
-
-#edit-button {
-  min-width: 150px;
-}
 
 .profile-text {
   color: $primary-color;

@@ -40,14 +40,13 @@ router.route('/login')
 router.route('/logout')
   .get(sessionsController.delete);
 
-router.route('/profile')
-  .get(secureRoute, registrationsController.show)
-  .put(secureRoute, registrationsController.update);
-
 router.route('/profile/:id')
+  .get(secureRoute, registrationsController.show)
+  .put(secureRoute, registrationsController.update)
   .delete(secureRoute, registrationsController.delete);
 
-router.route('/profile/edit')
+router.route('/profile/:id/edit')
   .get(secureRoute, registrationsController.edit);
+
 
 module.exports = router;
