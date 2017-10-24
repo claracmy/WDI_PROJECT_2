@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Website = require('../models/website');
 
 function registrationNew(req, res) {
   res.render('registrations/new');

@@ -1,7 +1,24 @@
 @import "variables";
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main-wrapper {
   box-sizing: border-box;
+  padding: 0 0 30px;
+  min-height: 100%;
+  position: relative;
+ }
+
+ footer {
+    bottom: 0;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .no-gutters {
@@ -56,6 +73,10 @@ nav {
     }
 }
 
+footer {
+  text-align: center;
+  font-weight: bold;
+}
 
 .btn {
   cursor: pointer;
@@ -120,7 +141,7 @@ nav {
 .website-hover-content {
   z-index: 2;
   position: relative;
-  font-family: $AccentFont;
+  font-family: $accent-font;
   color: white;
   height: 100%;
   display: flex;
@@ -153,6 +174,9 @@ nav {
   a:hover {
     opacity: 0.9;
   }
+  p {
+    font-size: 24px;
+    }
 }
 
 .show-website {
@@ -162,6 +186,15 @@ nav {
 
 .comments {
   margin: 10px 0;
+}
+
+.btn-group {
+  float: right;
+}
+
+.quotation-marks {
+  font-size: 40px;
+  font-family: 'Old Standard TT', serif;
 }
 
 
@@ -213,5 +246,9 @@ textarea {
 //Edit page
 
 #edit-button {
-  padding: 20px 40px;
+  min-width: 150px;
+}
+
+.profile-text {
+  color: $accent-color;
 }

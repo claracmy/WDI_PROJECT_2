@@ -1,8 +1,9 @@
 <div class="showpage container-fluid">
   <div class="row">
+
     <div class="col-lg-9">
       <a href="<%= website.url %>" target="_blank"><img class="show-website" src="<%= website.screenshotUrl %>"></a>
-      <p><%= website.description %></p>
+      <blockquote class="blockquote text-center"><p><span class="quotation-marks">‘‘</span><%= website.description %><span class="quotation-marks">’’</span></p></blockquote>
       <div class= "btn-group">
         <% if(locals.isAuthenticated && website.belongsTo(user)) { %>
         <a href="/websites/<%= website.id %>/edit"><button class="btn btn-secondary">Edit Website</button></a>
@@ -13,6 +14,7 @@
         <% } %>
       </div>
     </div>
+
     <div class="col-lg-3">
       <section>
       <h1>Feedback</h1>

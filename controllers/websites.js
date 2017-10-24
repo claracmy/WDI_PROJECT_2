@@ -14,7 +14,6 @@ function websiteNew(req, res) {
 
 function websiteCreate(req, res, next) {
   req.body.createdBy = req.user;
-  console.log(req.user);
   Website
     .create(req.body)
     .then(() => {

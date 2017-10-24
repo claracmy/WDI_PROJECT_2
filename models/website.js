@@ -15,10 +15,10 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
 const websiteSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  url: { type: String, required: true },
+  url: { type: String, required: true, index: { unique: true } },
   screenshotUrl: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  comments: [commentSchema]
+  comments: [ commentSchema ]
 });
 
 websiteSchema.methods.belongsTo = function websiteBelongsTo(user) {
