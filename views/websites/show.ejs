@@ -1,6 +1,5 @@
 <div class="showpage container-fluid">
   <div class="row">
-
     <div class="col-lg-9">
       <a href="<%= website.url %>" target="_blank"><img class="show-website" src="<%= website.screenshotUrl %>"></a>
       <blockquote class="blockquote text-center"><p><span class="quotation-marks">‘‘</span><%= website.description %><span class="quotation-marks">’’</span></p></blockquote>
@@ -35,7 +34,10 @@
           <textarea name="content" id="content" placeholder="Leave your feedback"></textarea>
           <button class="btn btn-secondary">Submit</button>
           </form>
+        <% } else { %>
+          <p><a href="/login">Log in </a> to leave feedback</p>
         <% } %>
+
       </section>
     </div>
   </div>

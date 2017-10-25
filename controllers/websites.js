@@ -29,7 +29,7 @@ function websiteShow(req, res) {
     .populate('comments.createdBy')
     .exec()
     .then((website) => {
-      if(!website) return res.status(404).end('Not found');
+      if(!website) res.notFound();
       res.render('websites/show', { website });
     });
 }
@@ -56,6 +56,7 @@ function websiteUpdate(req, res, next) {
       for(const field in req.body) {
         website[field] = req.body[field];
       }
+      req.flash('success', 'Website updated');
       return website.save();
     })
     .then(() =>
@@ -70,6 +71,7 @@ function websiteDelete(req, res, next) {
     .then(website => {
       if(!website) return res.notFound();
       if(!website.belongsTo(req.user)) return res.unauthroized('Permission denied');
+      req.flash('success', 'Website deleted');
       return website.remove();
     })
     .then(() => res.redirect('/'))
@@ -101,6 +103,7 @@ function deleteCommentRoute(req, res, next) {
     .then((website)=> {
       if(!website) return res.notFound();
       const comment = website.comments.id(req.params.commentId);
+      req.flash('success', 'Comment deleted');
       comment.remove();
 
       return website.save();

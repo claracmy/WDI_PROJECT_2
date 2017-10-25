@@ -4,13 +4,17 @@
     <h4>First Name: <span class="profile-text"><%= user.firstname %></span></h4>
     <h4>Last Name: <span class="profile-text"><%= user.lastname %></span></h4>
     <h4>Email Address: <span class="profile-text"><%= user.email %></span></h4>
+    <div class="submitted-websites">
     <h4>Submitted Websites: </h4>
-    <% websites.forEach((website) => { %>
+    <% website.forEach((website) => { %>
       <% if (`${website.createdBy}` === `${user.id}`) { %>
-        <p><%= website.name %></p>
+        <div class="edit-submissions">
+        <a href="/websites/<%= website.id %>"><p><%= website.name %></p></a>
+        <a href="/websites/<%= website.id %>/edit"><button class="btn btn-tertiary">Edit Website</button></a>
+        </div>
       <% } %>
     <% }); %>
-
+    </div>
 
     <div class="btn-group">
       <a href="/profile/<%= user.id %>/edit"><button class="btn btn-secondary">Edit Profile</button></a>

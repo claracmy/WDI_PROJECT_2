@@ -3,6 +3,7 @@ const router  = express.Router();
 const registrationsController = require('../controllers/registrations');
 const sessionsController = require('../controllers/sessions');
 const websitesController = require('../controllers/websites');
+const staticsController = require('../controllers/statics');
 const secureRoute = require('../lib/secureRoute');
 
 // Website routes
@@ -47,6 +48,11 @@ router.route('/profile/:id')
 
 router.route('/profile/:id/edit')
   .get(secureRoute, registrationsController.edit);
+
+// statics
+
+router.route('/about')
+  .get(staticsController.about);
 
 
 module.exports = router;

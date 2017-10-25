@@ -54,8 +54,10 @@ h3 {
 
 a {
   text-decoration: none;
+  color: $primary-color;
   &:hover {
     text-decoration: none;
+    color: $secondary-color;
     cursor: pointer;
   }
 }
@@ -139,6 +141,15 @@ nav {
   }
 }
 
+.btn-tertiary {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  &:hover {
+    background-color: lighten($secondary-color, 10%);
+    border-color: lighten($secondary-color, 10%);
+  }
+}
+
 .btn-danger {
   background-color: $accent-color;
   border-color: $accent-color;
@@ -170,7 +181,7 @@ nav {
   background-size: cover;
   opacity: 0.9;
   height: 400px;
-  @media (min-width: 760px) {
+  @media (min-width: 760ppx) {
     height: 460px;
   }
   @media (max-width: 1900px) {
@@ -310,8 +321,52 @@ textarea {
   }
 }
 
-//Edit page
+//Edit profile
 
 .profile-text {
   color: $primary-color;
+}
+
+.edit-submissions {
+  display: inline-block;
+  padding: 20px;
+  p {
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.submitted-websites {
+  width: 100%;
+}
+
+//About page
+
+.about {
+  text-align: center;
+  h1 {
+    color: $primary-color;
+  }
+  h2 {
+    font-weight: normal;
+    font-family: $standard-font;
+  }
+  p {
+    margin-top: 50px;
+    text-align: justify;
+    font-size: 24px;
+    color: #222;
+  }
+}
+
+//404
+.404 {
+  text-align: center;
+  margin-top: 50%;
+}
+#404 {
+  font-size: 100px;
+  color: lighten($primary-color,20%);
 }

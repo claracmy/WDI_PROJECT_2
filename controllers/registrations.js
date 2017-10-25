@@ -14,7 +14,7 @@ function registrationCreate(req, res) {
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
-        return res.status(400).render('registrations/new', { message: 'Passwords do not match' });
+        return res.status(401).render('registrations/new', { message: 'Passwords do not match' });
       }
       res.status(500).end();
     });
@@ -28,8 +28,9 @@ function registrationShow(req, res, next) {
       Website
         .find()
         .exec()
-        .then((websites) => {
-          res.render('registrations/show', { user, websites });
+        .then((website) => {
+          if(!website) res.notFound();
+          res.render('registrations/show', { user, website });
         });
     })
     .catch(next);
