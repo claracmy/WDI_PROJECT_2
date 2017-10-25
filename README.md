@@ -10,26 +10,27 @@ This is version 2 of Can I Launch. I attempted the first build using Ruby on Rai
 -------
 
 ## Screenshots  
-![Frontpage](https://imgur.com/PVbRXtV.png)  
 ## Frontpage  
-When each website is hovered, users can see the name and description of the site. This is achieved using Javascript show and hide elements. Submissions are only permitted if the user is registered and logged in.
+When each website is hovered, users can see the name and description of the site. This is achieved using Javascript show and hide elements. Submissions are only permitted if the user is registered and logged in.  
+![Frontpage](https://imgur.com/PVbRXtV.png)  
 
-![Show page](https://imgur.com/hsHXueA.png)  
 ## Show page  
-Full size website screenshot is shown on this page. Clicking the screenshot will take users to the business's page on a new tab. Users can leave feedback only if they are logged in. Users are able to delete their own feedback. Owner of the businesses are also allowed to edit and delete their businesses.
+Full size website screenshot is shown on this page. Clicking the screenshot will take users to the business's page on a new tab. Users can leave feedback only if they are logged in. Users are able to delete their own feedback. Owner of the businesses are also allowed to edit and delete their businesses.  
+![Show page](https://imgur.com/hsHXueA.png)  
 
-![Profile page](https://imgur.com/PWE6wex.png)  
 ## Profile page  
-Profile page contains logged in user's personal information as well as uploaded websites.
+Profile page contains logged in user's personal information as well as uploaded websites.  
+![Profile page](https://imgur.com/PWE6wex.png)  
 
-![Forms](https://imgur.com/O8WH7ca.png)
 ## Forms  
-Removed default twitter styling to create clean, beautiful forms. 
+Removed default twitter styling to create clean, beautiful forms.   
+![Forms](https://imgur.com/O8WH7ca.png)
 
+## Responsiveness  
+Viewed on iPad and iPhone 6.  
 ![Responsiveness](https://imgur.com/FRmrA6g.png) 
 ![Responsiveness](https://imgur.com/B5iovFF.png) 
-## Responsiveness  
-Viewed on iPad and iPhone 6.
+
 
 ------
 
