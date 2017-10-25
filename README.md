@@ -27,8 +27,9 @@ Profile page contains logged in user's personal information as well as uploaded 
 Removed default twitter styling to create clean, beautiful forms. 
 
 ![Responsiveness](https://imgur.com/FRmrA6g.png) 
+![Responsiveness](https://imgur.com/B5iovFF.png) 
 ## Responsiveness  
-Viewed on iPad
+Viewed on iPad and iPhone 6.
 
 ------
 
