@@ -16,7 +16,7 @@ When each website is hovered, users can see the name and description of the site
 
 ## Show page  
 Full size website screenshot is shown on this page. Clicking the screenshot will take users to the business's page on a new tab. Users can leave feedback only if they are logged in. Users are able to delete their own feedback. Owner of the businesses are also allowed to edit and delete their businesses.  
-![Show page]
+![Show page](https://imgur.com/hsHXueA.png)  
 
 ## Profile page  
 Profile page contains logged in user's personal information as well as uploaded websites.  
